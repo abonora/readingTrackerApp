@@ -1,8 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700&display=swap');
+@import url('https://css.gg/c?=|check-o|radio-check|radio-checked|loadbar|loadbar-doc|file|file-document|info');
 
 .App {
-  text-align: center;
+  //text-align: center;
   font-family: 'Rubik', sans-serif;
+  @media only screen and (min-width: 992px){
+    display: flex;
+  }
+
+  .readingStatusIcons{
+    color: red;
+    //--ggs: 2;
+    display: flex;
+    align-items: center;
+    i{
+      display: inline-block;
+      margin-left: 20px;
+      margin-right: 50px;
+    }
+  }
 }
 
 .App-logo {
