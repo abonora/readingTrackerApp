@@ -1,0 +1,54 @@
+@mixin fonts($weight, $size, $color) {
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+}
+
+.Landing{
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('landing-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    img{
+        max-width: 100%;
+        height: auto;
+        margin-top: -20px;
+    }
+    .copyWrapper{
+        position: absolute;
+        bottom: 15vh;
+        color: white;
+        text-align: center;
+        width: 100%;
+        h1,
+        h2{
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            @include fonts(300, 18px, white);
+            margin-bottom: 20px;
+            position: relative;
+            &:after{
+                position: absolute;
+                left: 25%;
+                bottom: -10px;
+                //transform: translateY(-50%);
+                width: 50%;
+                height: 1px;
+                background-color: white;
+                content: '';
+                display: block;
+            }
+        }
+        h2{
+            @include fonts(600, 25px, white);
+            text-transform: capitalize;
+            letter-spacing: 0.15em;
+        }
+    }
+}

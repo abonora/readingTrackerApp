@@ -1,0 +1,56 @@
+.yearWrapper{
+    width: 45vw;
+    vertical-align: top;
+    display: inline-block;
+    h3{
+        display: inline-block;
+        font-weight: 300;
+      }
+      ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        li{
+          display: inline-block;
+          color: lightgrey;
+          font-size: 20px;
+          font-weight: 400;
+          transition: all 300ms ease;
+          padding: 0 5px;
+          &:first-child{
+            margin-left: 15px; 
+            &.selected{
+              padding-left: 0;
+            }
+          }
+           
+          &.selected{
+            color: black;
+            font-weight: 500;
+            font-size: 26px;
+            padding: 0 10px;
+          }
+          &:not(.selected){
+            position:relative;
+            &:after{
+              width: 0;
+              height: 2px;
+              background-color: darkgrey;
+              display: block;
+              content: '';
+              //trasnform: scaleX(2);
+              transition: all 300ms ease;
+            }
+            &:hover{
+              color:darkgrey;
+              transform: scale(1.1);
+              cursor: pointer;
+              &:after{
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+}
