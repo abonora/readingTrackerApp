@@ -1,7 +1,15 @@
 .yearWrapper{
-    width: 45vw;
+    //width: 45vw;
+    width: 100%;
     vertical-align: top;
     display: inline-block;
+    background-color: white;
+    border-bottom: solid 3px lightgrey;
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 100px;
+    z-index: 1;
     h3{
         display: inline-block;
         font-weight: 300;
