@@ -41,6 +41,13 @@ class App extends Component {
           activeYear={this.state.activeYear}
           currentYear={this.state.currentYear}
           changeEvent={this.changeYear} />
+          <div className="readingStatusIcons">
+            <div>Not Read: <br /><i className="gg-radio-check"></i><br /><i className="gg-file"></i></div>
+            <div>Currently Reading:<br /><i className="gg-radio-checked"></i><br /><i className="gg-loadbar-doc"></i></div>
+            <div>Completed: <br /><i className="gg-check-o"></i><br /><i className="gg-file-document"></i></div>
+            <div>Loading: <br /><i className="gg-loadbar"></i></div>
+            <div>Info: <br /><i className="gg-info"></i></div>
+          </div>
           {/*
             fetch Currently Reading and Completed books in app.js and pass in arrays into bookslist as a prop
             possibily look into multiple fetch calls async await
