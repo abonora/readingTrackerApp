@@ -4,7 +4,7 @@ import './Landing.scss';
 
 const Landing = (props) => {
     return(
-        <div className="Landing">
+        <div id="Landing" className="column">
             <div className="copyWrapper">
                 <h1>albertobonora.com</h1>
                 <h2>{props.year + " " + props.title}</h2>

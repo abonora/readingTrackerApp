@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 import Landing from './components/Landing/Landing';
 import YearSelector from './components/YearSelector/YearSelector';
+import Books from './components/Books/Books';
 
 class App extends Component {
   
@@ -36,18 +37,22 @@ class App extends Component {
         <Landing
           title="book reading challenge"
           year={this.state.currentYear} />
-        <YearSelector
+          <Books
           years={this.state.years}
           activeYear={this.state.activeYear}
           currentYear={this.state.currentYear}
           changeEvent={this.changeYear} />
+		
+        {/* 
+        
+         
           <div className="testContent">
             <h1>Test</h1>
 
             <h2>test</h2>
 
             <h3>test</h3>
-          </div>
+          </div>  */}
           {/* <div className="readingStatusIcons">
             <div>Not Read: <br /><i className="gg-radio-check"></i><br /><i className="gg-file"></i></div>
             <div>Currently Reading:<br /><i className="gg-radio-checked"></i><br /><i className="gg-loadbar-doc"></i></div>
