@@ -1,0 +1,11 @@
+@import './../../styles/mixins.scss';
+@import './../../styles/variables.scss';
+
+
+footer{
+    width: inherit;
+    padding: 10px 20px;
+    background-color: $navyblue;
+    color: white;
+    font-size: 10px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import YearSelector from './../YearSelector/YearSelector';
+import Footer from './../Footer/Footer';
 import './Books.scss';
 
 const Books = (props) => {
@@ -10,7 +11,7 @@ const Books = (props) => {
                 activeYear={props.activeYear}
                 currentYear={props.currentYear}
                 changeEvent={props.changeEvent} />
-                <div className="bottom">
+			<div className="bottom">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper. Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus ullamcorper urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
 				<p>Sed porttitor turpis quis est pellentesque, in accumsan risus porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas quis elit sed felis dapibus sodales ut auctor nibh. Mauris dapibus diam in ante scelerisque ultrices. Nam tincidunt lorem vel ultricies sodales. Nullam facilisis placerat pulvinar. Nullam in arcu urna. Pellentesque tempus lorem et ligula viverra convallis. Integer id vehicula quam, sit amet dictum urna. Praesent pellentesque hendrerit risus non pharetra. In a libero finibus, hendrerit justo quis, consequat nunc. Sed iaculis efficitur nunc sagittis hendrerit. Praesent ligula augue, malesuada quis pretium semper, facilisis non quam. Phasellus ac placerat mi. Quisque ac fermentum tellus.</p>
 				<p>Duis facilisis aliquet neque, nec dignissim dolor venenatis non. Donec quis consectetur nibh. Ut ut purus in metus pellentesque feugiat non ut augue. Aenean at leo vulputate, viverra ligula ut, aliquam turpis. Cras nunc dui, sollicitudin quis lorem sit amet, auctor mollis libero. Integer non magna ipsum. Etiam ullamcorper urna tortor, nec tempor tortor elementum et. Donec placerat mi nisi, id rhoncus lacus sodales sed. Nullam lorem risus, sollicitudin non lacinia a, scelerisque et mauris. Vivamus nisi enim, egestas ac ante eu, molestie vestibulum felis. Praesent vitae dui tincidunt mi malesuada pharetra. Integer vehicula leo at laoreet tempor. In vestibulum rutrum tellus, eget suscipit orci egestas et. Vestibulum tincidunt aliquam dui, ac pharetra eros commodo ut. Sed tempus eget orci a laoreet. Donec gravida imperdiet congue.</p>
@@ -25,6 +26,7 @@ const Books = (props) => {
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper. Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus ullamcorper urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
 				<p>Sed porttitor turpis quis est pellentesque, in accumsan risus porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas quis elit sed felis dapibus sodales ut auctor nibh. Mauris dapibus diam in ante scelerisque ultrices. Nam tincidunt lorem vel ultricies sodales. Nullam facilisis placerat pulvinar. Nullam in arcu urna. Pellentesque tempus lorem et ligula viverra convallis. Integer id vehicula quam, sit amet dictum urna. Praesent pellentesque hendrerit risus non pharetra. In a libero finibus, hendrerit justo quis, consequat nunc. Sed iaculis efficitur nunc sagittis hendrerit. Praesent ligula augue, malesuada quis pretium semper, facilisis non quam. Phasellus ac placerat mi. Quisque ac fermentum tellus.</p>
 			</div>
+			<Footer/>
         </div>
     );
 }
