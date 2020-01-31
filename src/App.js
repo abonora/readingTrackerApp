@@ -43,16 +43,6 @@ class App extends Component {
           currentYear={this.state.currentYear}
           changeEvent={this.changeYear} />
 		
-        {/* 
-        
-         
-          <div className="testContent">
-            <h1>Test</h1>
-
-            <h2>test</h2>
-
-            <h3>test</h3>
-          </div>  */}
           {/* <div className="readingStatusIcons">
             <div>Not Read: <br /><i className="gg-radio-check"></i><br /><i className="gg-file"></i></div>
             <div>Currently Reading:<br /><i className="gg-radio-checked"></i><br /><i className="gg-loadbar-doc"></i></div>
@@ -68,20 +58,6 @@ class App extends Component {
               - year selector
               - book repeater
           */}
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header> */}
       </div>
     )
   }
