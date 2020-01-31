@@ -1,5 +1,6 @@
 import React from 'react';
 import YearSelector from './../YearSelector/YearSelector';
+import './Books.scss';
 
 const Books = (props) => {
     return(
