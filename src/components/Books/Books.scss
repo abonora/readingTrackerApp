@@ -1,3 +1,5 @@
+@import './../../styles/variables.scss';
+
 #Books{
     background-color: #f3f3f3;
     width: 65vw;
@@ -13,7 +15,15 @@
             background-color: white;
             border: solid 1px darkgray;
             box-sizing: border-box;
-            width: calc( (100% / 2) - 20px );
+
+            @media only screen and (min-width: $sm-screen){
+                width: calc( (100% / 2) - 20px );
+            }
+
+            @media only screen and (min-width: $xl-screen){
+                width: calc( (100% / 3) - 20px );
+            }
+            width: calc( 100%  - 20px );
             height: 230px;
             margin: 10px;
             padding: 8px;

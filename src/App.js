@@ -43,7 +43,14 @@ class App extends Component {
           currentYear={this.state.currentYear}
           changeEvent={this.changeYear} />
 		
-          {/* <div className="readingStatusIcons">
+          {/* 
+          IDEAS
+          -------
+          * potentially add a modal that the user will click the book tile to activate and it just displays more info regarding that book?? 
+
+          * potentially add a filter so that you can filter whats been completed, in progess or to do
+          
+          <div className="readingStatusIcons">
             <div>Not Read: <br /><i className="gg-radio-check"></i><br /><i className="gg-file"></i></div>
             <div>Currently Reading:<br /><i className="gg-radio-checked"></i><br /><i className="gg-loadbar-doc"></i></div>
             <div>Completed: <br /><i className="gg-check-o"></i><br /><i className="gg-file-document"></i></div>

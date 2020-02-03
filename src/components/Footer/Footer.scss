@@ -7,4 +7,13 @@ footer{
     background-color: $navyblue;
     color: white;
     font-size: 10px;
+    display: flex;
+
+    span{
+        width: 50%;
+        &:nth-child(even){
+            text-align: right;
+        }
+        //align-items: flex-end;
+    }
 }
