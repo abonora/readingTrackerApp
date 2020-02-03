@@ -29,6 +29,9 @@ class App extends Component {
       ]
     }
   }
+
+  //api fetch has to happen in here and not in books.js that way it can update the feed.
+
   componentDidMount(){
     this.getCurrentShelfId(this.state.currentYear);
   }

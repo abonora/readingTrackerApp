@@ -14,6 +14,7 @@ class Books extends React.Component {
 			thisYear: this.props.currentYear
 		};
 	}
+	//api fetch has to happen in app.js and not in here that way it can update the feed.
 	componentDidMount(){
 		console.log(this.state.thisYear);
 		fetch("https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/1001/volumes")
