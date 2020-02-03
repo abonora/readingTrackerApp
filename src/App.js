@@ -9,6 +9,7 @@ class App extends Component {
   
   state = {
     currentYear: new Date().getFullYear(),
+    currentShelfId: null,
     //years: [2020, 2019, 2018, 2017]
     years: [
       {
@@ -25,11 +26,24 @@ class App extends Component {
       }
     ]
   }
-
+  getCurrentShelfId = (year) => {
+    let years = this.state.years
+    let obj = years.find(o => o.year === year);
+    
+    this.setState({
+      currentShelfId: obj.bookShelf
+    });
+  }
   changeYear = (event) => {
-    let activeYear = parseInt(event.target.getAttribute('data-year'))
-    this.setState({currentYear: activeYear});
-    //console.log(event.target.getAttribute('data-shelfid'));
+    let activeYear = parseInt(event.target.getAttribute('data-year'));
+    let activeShelfId = parseInt(event.target.getAttribute('data-shelfid'));
+    this.setState({
+      currentYear: activeYear,
+      currentShelfId: activeShelfId
+    });
+  }
+  componentDidMount(){
+    this.getCurrentShelfId(this.state.currentYear);
   }
   render (){
     return(
@@ -41,7 +55,8 @@ class App extends Component {
           years={this.state.years}
           activeYear={this.state.activeYear}
           currentYear={this.state.currentYear}
-          changeEvent={this.changeYear} />
+          changeEvent={this.changeYear}
+          bookShelfId={this.state.currentShelfId} />
 		
           {/* 
           IDEAS
