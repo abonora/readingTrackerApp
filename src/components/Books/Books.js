@@ -5,21 +5,23 @@ import './Books.scss';
 
 const Books = (props) => {
     return(
-        <div id="Books" className="column">
+        <div className="bookshelf">
             <YearSelector
                 years={props.years}
                 activeYear={props.activeYear}
                 currentYear={props.currentYear}
                 changeEvent={props.changeEvent} />
-			<div className="booksWrapper">
-				<div className="innerBooksWrapper">
-					<div className="bookCard"><h3>Book Title</h3><p><em>Author</em></p></div>
-					<div className="bookCard"><h3>Book Title</h3><p><em>Author</em></p></div>
-					<div className="bookCard"><h3>Book Title</h3><p><em>Author</em></p></div>
-					<div className="bookCard"><h3>Book Title</h3><p><em>Author</em></p></div>
-					<div className="bookCard"><h3>Book Title</h3><p><em>Author</em></p></div>
-					<div className="bookCard"><h3>Book Title</h3><p><em>Author</em></p></div>
-					<div className="bookCard"><h3>Book Title</h3><p><em>Author</em></p></div>
+			<div className="bookshelf__wrapper">
+				<div className="bookshelf_loading"><i className="gg-loadbar"></i></div>
+				<div>Shelf ID: {props.bookShelfId}</div>
+				<div className="bookshelf__list">
+					<div className="bookshelf__book"><h3>Book Title</h3><p><em>Author</em></p></div>
+					<div className="bookshelf__book"><h3>Book Title</h3><p><em>Author</em></p></div>
+					<div className="bookshelf__book"><h3>Book Title</h3><p><em>Author</em><i className="gg-info"></i></p></div>
+					<div className="bookshelf__book"><h3>Book Title</h3><p><em>Author</em></p></div>
+					<div className="bookshelf__book"><h3>Book Title</h3><p><em>Author</em></p></div>
+					<div className="bookshelf__book"><h3>Book Title</h3><p><em>Author</em></p></div>
+					<div className="bookshelf__book"><h3>Book Title</h3><p><em>Author</em></p></div>
 				</div>
 				
 			</div>
