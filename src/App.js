@@ -7,25 +7,32 @@ import Books from './components/Books/Books';
 
 class App extends Component {
   
-  state = {
-    currentYear: new Date().getFullYear(),
-    currentShelfId: null,
-    //years: [2020, 2019, 2018, 2017]
-    years: [
-      {
-        year: 2020,
-        bookShelf: 1001
-      },
-      {
-        year: 2019,
-        bookShelf: 1002
-      },
-      {
-        year: 2018,
-        bookShelf: 1003
-      }
-    ]
+  constructor(props){
+    super(props);
+    this.state = {
+      currentYear: new Date().getFullYear(),
+      currentShelfId: null,
+      //years: [2020, 2019, 2018, 2017]
+      years: [
+        {
+          year: 2020,
+          bookShelf: 1001
+        },
+        {
+          year: 2019,
+          bookShelf: 1002
+        },
+        {
+          year: 2018,
+          bookShelf: 1003
+        }
+      ]
+    }
   }
+  componentDidMount(){
+    this.getCurrentShelfId(this.state.currentYear);
+  }
+  //Methods
   getCurrentShelfId = (year) => {
     let years = this.state.years
     let obj = years.find(o => o.year === year);
@@ -42,9 +49,7 @@ class App extends Component {
       currentShelfId: activeShelfId
     });
   }
-  componentDidMount(){
-    this.getCurrentShelfId(this.state.currentYear);
-  }
+  //output
   render (){
     return(
       <div className="App">
@@ -53,7 +58,7 @@ class App extends Component {
           year={this.state.currentYear} />
           <Books
           years={this.state.years}
-          activeYear={this.state.activeYear}
+          //activeYear={this.state.activeYear}
           currentYear={this.state.currentYear}
           changeEvent={this.changeYear}
           bookShelfId={this.state.currentShelfId} />
