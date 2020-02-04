@@ -26,16 +26,39 @@ class App extends Component {
           year: 2018,
           bookShelf: 1003
         }
-      ]
+      ],
+      error: null,
+			isLoaded: false,
+			items: [],
     }
   }
 
   //api fetch has to happen in here and not in books.js that way it can update the feed.
 
   componentDidMount(){
-    this.getCurrentShelfId(this.state.currentYear);
+    this.fetchBooks(1001);
+		
   }
   //Methods
+  fetchBooks = (shelfId) => {
+    console.log(shelfId);
+    fetch('https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/'+shelfId+'/volumes')
+		.then(res => res.json())
+		.then(
+			(result) => {
+				this.setState({
+					isLoaded: true,
+					items: result.items
+				});
+			},
+			(error) => {
+				this.setState({
+					isLoaded: true,
+					error
+				});
+			}
+		)
+  }
   getCurrentShelfId = (year) => {
     let years = this.state.years
     let obj = years.find(o => o.year === year);
@@ -47,10 +70,15 @@ class App extends Component {
   changeYear = (event) => {
     let activeYear = parseInt(event.target.getAttribute('data-year'));
     let activeShelfId = parseInt(event.target.getAttribute('data-shelfid'));
-    this.setState({
-      currentYear: activeYear,
-      currentShelfId: activeShelfId
-    });
+
+    if(activeYear!= this.state.currentYear){
+      this.setState({
+        currentYear: activeYear,
+        currentShelfId: activeShelfId
+      });
+      this.fetchBooks(activeShelfId);
+    }
+    
   }
   //output
   render (){
@@ -64,7 +92,8 @@ class App extends Component {
           //activeYear={this.state.activeYear}
           currentYear={this.state.currentYear}
           changeEvent={this.changeYear}
-          bookShelfId={this.state.currentShelfId} />
+          bookShelfId={this.state.currentShelfId}
+          booksArray={this.state.items} />
 		
           {/* 
           IDEAS
