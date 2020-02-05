@@ -29,17 +29,40 @@ class App extends Component {
       ],
       error: null,
 			isLoaded: false,
-			items: [],
+      readingChallengeArray: [],
+      readingArray: [],
+      completedArray: []
     }
   }
 
   //api fetch has to happen in here and not in books.js that way it can update the feed.
 
   componentDidMount(){
+
+    //get default bookshelf
     this.fetchBooks(1001);
+
+    //get currently reading and want to read books
+    const currentlyReadingUrl = 'https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/3/volumes';
+    const completedUrl = 'https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/4/volumes?maxResults=40';
+    this.getShelfData(currentlyReadingUrl,completedUrl);
 		
   }
   //Methods
+  getShelfData = (reading, completed) => {
+    Promise.all([fetch(reading), fetch(completed)])
+
+      .then(([res1, res2]) => { 
+         return Promise.all([res1.json(), res2.json()]) 
+      })
+      .then(([res1, res2]) => {
+        // set state in here
+        this.setState({
+					readingArray: res1.items,
+					completedArray: res2.items
+				});
+      });
+  }
   fetchBooks = (shelfId) => {
     console.log(shelfId);
     fetch('https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/'+shelfId+'/volumes')
@@ -48,7 +71,7 @@ class App extends Component {
 			(result) => {
 				this.setState({
 					isLoaded: true,
-					items: result.items
+					readingChallengeArray: result.items
 				});
 			},
 			(error) => {
@@ -93,7 +116,10 @@ class App extends Component {
           currentYear={this.state.currentYear}
           changeEvent={this.changeYear}
           bookShelfId={this.state.currentShelfId}
-          booksArray={this.state.items} />
+          booksArray={this.state.readingChallengeArray}
+          completedArray={this.state.completedArray}
+          readingArray={this.state.readingArray}
+          />
 		
           {/* 
           IDEAS
