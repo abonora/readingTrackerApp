@@ -19,7 +19,11 @@ const Books = (props) => {
 				<div>Shelf ID: {props.bookShelfId}</div>
 				<div className="bookshelf__list">
 					{array.map((item, index) => (
-					<SingleBook key={index} bookinfo={item}/>
+					<SingleBook 
+						key={index}
+						bookinfo={item}
+						completedArray={props.completedArray}
+						readingArray={props.readingArray}/>
 					))}
 				</div>
 				

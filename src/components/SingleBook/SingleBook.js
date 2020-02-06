@@ -1,5 +1,6 @@
 import React from 'react';
 import './SingleBook.scss';
+import ReadingStatus from './../ReadingStatus/ReadingStatus';
 
 class SingleBook extends React.Component {
 	componentDidMount(){}
@@ -14,6 +15,10 @@ class SingleBook extends React.Component {
 				))}
 				</ul>
 				<p>Pages: {this.props.bookinfo.volumeInfo.pageCount}</p>
+				<ReadingStatus
+					bookTitle={this.props.bookinfo.volumeInfo.title}
+					completedArray={this.props.completedArray}
+					readingArray={this.props.readingArray}/>
 			</div>
 		);
 	}
