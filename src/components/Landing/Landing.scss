@@ -1,5 +1,6 @@
 @import './../../styles/mixins.scss';
 @import './../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 
 .landing{
     @media only screen and (max-width: $xs-screen-max){
@@ -48,13 +49,14 @@
         font-style: italic;
     }
     &__appTitle{
-        @include fonts(600, 18px, white);
-        text-transform: capitalize;
+        @include fonts(bold, 18px, white);
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-transform: uppercase;
         letter-spacing: 0.15em;
         margin-top: 5px;
 
         @media only screen and (min-width: $xl-screen){
-            font-size: 1.5em;
+            font-size: 2.2em;
         }
     }
 
