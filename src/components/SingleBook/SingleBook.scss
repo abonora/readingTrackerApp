@@ -1,0 +1,11 @@
+.bookshelf{
+    &__book{
+        display: flex;
+    }
+    &__bookImg{
+        flex-direction: column;
+    }
+    &__bookInfo{
+        flex-direction: column;
+    }
+}
