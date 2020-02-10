@@ -1,4 +1,5 @@
 import React from 'react';
+import './ReadingStatus.scss';
 
 class ReadingStatus extends React.Component {
     componentDidMount(){
@@ -10,18 +11,21 @@ class ReadingStatus extends React.Component {
         let completed = this.props.completedArray;
 
         let readingStatusText = "Want To Read";
+        let readingStatusIcon = "gg-file";
         let found = false;
 
         if (readingNow.filter(e => e.volumeInfo.title === currentBook).length > 0) {
             found = true;
             readingStatusText = "Found in Reading Now";
+            readingStatusIcon = "gg-loadbar-doc";
         } else if (!found && completed.filter(e => e.volumeInfo.title === currentBook).length > 0) {
             found = true;
-            readingStatusText = "Found in Completed";
+            readingStatusText = "Completed";
+            readingStatusIcon = "gg-file-document";
         }
         return(
             <div>
-                <span>Reading Status: {readingStatusText}</span>
+                <span className="bookshelf__readingStatus">Reading Status: {readingStatusText}<i className={readingStatusIcon}></i></span>
             </div>
         )
     }
