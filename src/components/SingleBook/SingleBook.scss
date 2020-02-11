@@ -1,3 +1,7 @@
+@import './../../styles/mixins.scss';
+@import './../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
 .bookshelf{
     &__book{
         display: flex;
@@ -9,5 +13,39 @@
     }
     &__bookInfo{
         flex-direction: column;
+    }
+    &__bookTitle{
+        margin: 0 0 3px 0;
+        padding: 0;
+        @include fonts(bold, 22px, black);
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+    }
+    &__bookAuthorList{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    &__bookAuthor{
+        display: inline-block;
+        @include fonts(normal, 18px, darkgrey);
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-transform: lowercase;
+        letter-spacing: 0.1em;
+        font-style: italic;
+        &:not(:last-of-type){
+            &:after{
+                content: ",";
+                display: inline-block;
+            }
+            margin-right: 5px;
+        }
+    }
+    &__bookPages{
+        @include fonts(normal, 18px, darkgrey);
+        font-family: 'Open Sans Condensed', sans-serif;
+        text-transform: lowercase;
+        letter-spacing: 0.1em;
     }
 }

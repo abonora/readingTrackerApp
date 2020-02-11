@@ -16,7 +16,6 @@ const Books = (props) => {
 			<div className="bookshelf__wrapper">
 				{/* {!isLoaded >
 					<div className="bookshelf_loading"><i className="gg-loadbar"></i></div> */}
-				<div>Shelf ID: {props.bookShelfId}</div>
 				<div className="bookshelf__list">
 					{array.map((item, index) => (
 					<SingleBook 
