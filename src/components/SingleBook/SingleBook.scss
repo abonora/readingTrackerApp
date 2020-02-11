@@ -4,6 +4,8 @@
     }
     &__bookImg{
         flex-direction: column;
+        width: inherit;
+        margin-right: 8px;
     }
     &__bookInfo{
         flex-direction: column;
