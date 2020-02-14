@@ -21,11 +21,11 @@ class ReadingStatus extends React.Component {
         } else if (!found && completed.filter(e => e.volumeInfo.title === currentBook).length > 0) {
             found = true;
             readingStatusText = "Completed";
-            readingStatusIcon = "gg-file-document";
+            readingStatusIcon = "gg-check-o";
         }
         return(
             <div>
-                <span className="bookshelf__readingStatus">Reading Status: {readingStatusText}<i className={readingStatusIcon}></i></span>
+                <span className="bookshelf__readingStatus"><i className={readingStatusIcon}></i></span>
             </div>
         )
     }

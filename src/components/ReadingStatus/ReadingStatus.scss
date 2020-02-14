@@ -1,14 +1,12 @@
 @import url('https://css.gg/c?=|check-o|radio-check|radio-checked|loadbar|loadbar-doc|file|file-document|info');
 .bookshelf{
     &__readingStatus{
-        color: red;
+        color: black;
         //--ggs: 2;
         display: flex;
         align-items: center;
         i{
             display: inline-block;
-            margin-left: 20px;
-            margin-right: 50px;
         }
     }
 }
