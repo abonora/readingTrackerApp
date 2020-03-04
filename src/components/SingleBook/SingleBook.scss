@@ -12,7 +12,7 @@
         box-shadow: 0px 8px 3px -6px lightgrey;
         box-sizing: border-box;
 
-        @media only screen and (min-width: $sm-screen){
+        @media only screen and (min-width: $md-screen){
             width: calc( (100% / 2) - 20px );
         }
 
@@ -35,8 +35,12 @@
         img{
             outline: 2px solid white;
             outline-offset: -5px;
-            width: 100%;
+            max-width: 100%;
             height: -webkit-fill-available;
+        }
+        @media only screen and (max-width: $xs-screen-max){
+            flex-basis: 45%;
+            text-align: center;
         }
     }
     &__bookInfo{
@@ -44,6 +48,9 @@
         flex-grow: 0;
         flex-shrink: 0;
         flex-basis: calc(100% - 40%);
+        @media only screen and (max-width: $xs-screen-max){
+            flex-basis: calc(100% - 50%);
+        }
     }
     &__bookTitle{
         margin: 0 0 3px 0;
@@ -52,6 +59,10 @@
         font-family: 'Open Sans Condensed', sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.15em;
+
+        @media only screen and (max-width: $xs-screen-max){
+            font-size: 18px;
+        }
     }
     &__bookAuthorList{
         margin: 0;

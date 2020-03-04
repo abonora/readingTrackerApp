@@ -16,4 +16,10 @@
         display: flex;
         flex-flow: row wrap;
     }
+
+    @media only screen and (max-width: $xs-screen-max){
+        width: 100%;
+        margin-top: 100px;
+        height: calc(100% - 100px);
+    }
 }

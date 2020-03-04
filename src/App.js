@@ -94,7 +94,7 @@ class App extends Component {
     let activeYear = parseInt(event.target.getAttribute('data-year'));
     let activeShelfId = parseInt(event.target.getAttribute('data-shelfid'));
 
-    if(activeYear!= this.state.currentYear){
+    if(activeYear!== this.state.currentYear){
       this.setState({
         currentYear: activeYear,
         currentShelfId: activeShelfId
