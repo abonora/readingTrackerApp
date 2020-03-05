@@ -105,46 +105,31 @@ class App extends Component {
   }
   //output
   render (){
-    return(
-      <div className="App">
-        <Landing
-          title="book reading challenge"
-          year={this.state.currentYear} />
-          <Books
-          years={this.state.years}
-          //activeYear={this.state.activeYear}
-          currentYear={this.state.currentYear}
-          changeEvent={this.changeYear}
-          bookShelfId={this.state.currentShelfId}
-          booksArray={this.state.readingChallengeArray}
-          completedArray={this.state.completedArray}
-          readingArray={this.state.readingArray}
-          />
-		
-          {/* 
-          IDEAS
-          -------
-          * potentially add a modal that the user will click the book tile to activate and it just displays more info regarding that book?? 
-
-          * potentially add a filter so that you can filter whats been completed, in progess or to do
-          
-          <div className="readingStatusIcons">
-            <div>Not Read: <br /><i className="gg-radio-check"></i><br /><i className="gg-file"></i></div>
-            <div>Currently Reading:<br /><i className="gg-radio-checked"></i><br /><i className="gg-loadbar-doc"></i></div>
-            <div>Completed: <br /><i className="gg-check-o"></i><br /><i className="gg-file-document"></i></div>
-            <div>Loading: <br /><i className="gg-loadbar"></i></div>
-            <div>Info: <br /><i className="gg-info"></i></div>
-          </div> */}
-          {/*
-            fetch Currently Reading and Completed books in app.js and pass in arrays into bookslist as a prop
-            possibily look into multiple fetch calls async await
-            landing
-            bookslist - in here you'll need to compare the book title or ISBN number to those that have been read or in progress to determine the status
-              - year selector
-              - book repeater
-          */}
-      </div>
-    )
+    if(this.state.error){
+      return <p>Error: {this.state.error.message}</p>;
+    }else if(!this.state.isLoaded){
+      return <p>Loading.....</p>;
+    }else{
+      return(
+        <div className="App">
+          <Landing
+            title="book reading challenge"
+            year={this.state.currentYear} />
+            <Books
+            years={this.state.years}
+            //activeYear={this.state.activeYear}
+            currentYear={this.state.currentYear}
+            changeEvent={this.changeYear}
+            bookShelfId={this.state.currentShelfId}
+            booksArray={this.state.readingChallengeArray}
+            completedArray={this.state.completedArray}
+            readingArray={this.state.readingArray}
+            loading={this.state.isLoaded}
+            />
+        </div>
+      )
+    }
+    
   }
 }
 
