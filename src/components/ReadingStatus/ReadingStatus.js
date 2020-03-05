@@ -14,7 +14,7 @@ class ReadingStatus extends React.Component {
         let readingStatusIcon = "gg-file";
         let found = false;
 
-        if (readingNow.filter(e => e.volumeInfo.title === currentBook).length > 0) {
+        if ((readingNow !== undefined) && (readingNow.filter(e => e.volumeInfo.title === currentBook).length > 0)) {
             found = true;
             readingStatusText = "Found in Reading Now";
             readingStatusIcon = "gg-loadbar-doc";
