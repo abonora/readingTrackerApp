@@ -32,11 +32,16 @@
         overflow: hidden;
         margin-right: 8px;
         max-height: 207px;
+        opacity: 1;
+        transition: opacity 400ms ease-in-out;
         img{
             outline: 2px solid white;
             outline-offset: -5px;
             max-width: 100%;
             height: -webkit-fill-available;
+        }
+        &:hover{
+            opacity: .6;
         }
         @media only screen and (max-width: $xs-screen-max){
             flex-basis: 45%;

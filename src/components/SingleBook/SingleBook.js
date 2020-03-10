@@ -6,10 +6,11 @@ class SingleBook extends React.Component {
 	componentDidMount(){}
 	render() {
 		const authorsArray = this.props.bookinfo.volumeInfo.authors;
+		const googleBookUrl = "https://books.google.ca/books?id=";
 	  	return(
 			<div className="bookshelf__book">
 				<div className="bookshelf__bookImg">
-					<img src={this.props.bookinfo.volumeInfo.imageLinks.thumbnail} alt={this.props.bookinfo.volumeInfo.title} title={this.props.bookinfo.volumeInfo.title}/>
+					<a href={googleBookUrl+this.props.bookinfo.id} target="_blank" rel="noopener noreferrer" title={this.props.bookinfo.volumeInfo.title}><img src={this.props.bookinfo.volumeInfo.imageLinks.thumbnail} alt={this.props.bookinfo.volumeInfo.title} title={this.props.bookinfo.volumeInfo.title}/></a> 
 				</div>
 				<div className="bookshelf__bookInfo">
 					<h3 className="bookshelf__bookTitle">{this.props.bookinfo.volumeInfo.title}</h3>
