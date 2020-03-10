@@ -2,6 +2,7 @@ import React from 'react';
 import YearSelector from './../YearSelector/YearSelector';
 import Footer from './../Footer/Footer';
 import SingleBook from './../SingleBook/SingleBook';
+import IconLegend from './../Legend/Legend';
 import './Books.scss';
 
 const Books = (props) => {
@@ -25,7 +26,7 @@ const Books = (props) => {
 						readingArray={props.readingArray}/>
 					))}
 				</div>
-				
+				<IconLegend/>
 			</div>
 			<Footer/>
 		</div>
