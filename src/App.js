@@ -4,6 +4,12 @@ import './App.scss';
 import Landing from './components/Landing/Landing';
 import YearSelector from './components/YearSelector/YearSelector';
 import Books from './components/Books/Books';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-683832-1', {
+  //debug: true,
+  titleCase: false
+});
 
 class App extends Component {
   
@@ -46,7 +52,9 @@ class App extends Component {
     const currentlyReadingUrl = 'https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/3/volumes';
     const completedUrl = 'https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/4/volumes?maxResults=40';
     this.getShelfData(currentlyReadingUrl,completedUrl);
-		
+    
+    
+    // ReactGA.pageview('/reading-tracker-app/'+this.state.currentYear);
   }
   //Methods
   getShelfData = (reading, completed) => {
@@ -72,7 +80,8 @@ class App extends Component {
 				this.setState({
 					isLoaded: true,
 					readingChallengeArray: result.items
-				});
+        });
+        ReactGA.pageview('/reading-tracker-app/'+this.state.currentYear, '', 'Reading Tracker App Year: '+this.state.currentYear);
 			},
 			(error) => {
 				this.setState({
@@ -100,6 +109,7 @@ class App extends Component {
         currentShelfId: activeShelfId
       });
       this.fetchBooks(activeShelfId);
+      // ReactGA.pageview('/reading-tracker-app/'+activeYear, '', 'Reading Tracker App Year: '+activeYear);
     }
     
   }

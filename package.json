@@ -2,6 +2,7 @@
   "name": "book-reading-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.albertobonora.com/reading-tracker-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
@@ -9,6 +10,7 @@
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-ga": "^2.7.0",
     "react-scripts": "3.3.0"
   },
   "scripts": {

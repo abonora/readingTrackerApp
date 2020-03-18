@@ -1,8 +1,20 @@
+## Project Overview
+
+This project is a simple app that takes a bunch of feeds from Google Books of books that I have read over the years. Filtered by year will list a bunch of book title, pages, author, cover, link and reading status. 
+
+Demo:  https://albertobonora.com/reading-tracker-app/
+
+## 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Runs the installer and will install all the required packages.
 
 ### `npm start`
 
