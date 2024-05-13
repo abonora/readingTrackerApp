@@ -18,7 +18,8 @@ class SingleBook extends React.Component {
 					<a href={googleBookUrl+this.props.bookinfo.id} target="_blank" rel="noopener noreferrer" title={this.props.bookinfo.volumeInfo.title}><img src={this.fixImagePath(this.props.bookinfo.volumeInfo.imageLinks.thumbnail)} alt={this.props.bookinfo.volumeInfo.title} title={this.props.bookinfo.volumeInfo.title}/></a> 
 				</div>
 				<div className="bookshelf__bookInfo">
-					<h3 className="bookshelf__bookTitle">{this.props.bookinfo.volumeInfo.title}</h3>
+					{/* <h3 className="bookshelf__bookTitle">{this.props.bookinfo.volumeInfo.title.substring(0, 35)}</h3> */}
+					<h3 className="bookshelf__bookTitle">{this.props.bookinfo.volumeInfo.title.length > 35 ? this.props.bookinfo.volumeInfo.title.substring(0, 35)+'...' : this.props.bookinfo.volumeInfo.title}</h3>
 					<ul className="bookshelf__bookAuthorList">
 					{authorsArray.map((item, index) => (
 					<li className="bookshelf__bookAuthor" key={index}>{item}</li>

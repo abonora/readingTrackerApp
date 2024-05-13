@@ -21,6 +21,14 @@ class App extends Component {
       //years: [2020, 2019, 2018, 2017]
       years: [
         {
+          year: 2024,
+          bookShelf: 1005
+        },
+        {
+          year: 2023,
+          bookShelf: 1004
+        },
+        {
           year: 2020,
           bookShelf: 1001
         },
@@ -46,7 +54,7 @@ class App extends Component {
   componentDidMount(){
 
     //get default bookshelf
-    this.fetchBooks(1001);
+    this.fetchBooks(1005);
 
     //get currently reading and want to read books
     const currentlyReadingUrl = 'https://www.googleapis.com/books/v1/users/112937837834791569866/bookshelves/3/volumes';
